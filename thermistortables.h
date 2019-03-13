@@ -41,6 +41,10 @@
 #define PtAdVal(T,R0,Rup) (short)(1024/(Rup/PtRt(T,R0)+1))
 #define PtLine(T,R0,Rup) { OV(PtAdVal(T,R0,Rup)), T },
 
+#if ANY_THERMISTOR_IS(99) // Trianglelab ATC Semitec 104GT-2 104NT-4-R025H42G
+  #include "thermistortable_99.h"
+#endif
+
 #if ANY_THERMISTOR_IS(1) // 100k bed thermistor
   #include "thermistortable_1.h"
 #endif
